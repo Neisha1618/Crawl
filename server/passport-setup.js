@@ -16,6 +16,7 @@ passport.use(new GoogleStrategy({
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
   // this is the url you will be redirected to after login
   callbackURL: '/api/auth/google/callback',
+  proxy: true, // allow https
 },
 (accessToken, refreshToken, profile, done) => {
   // The INSERT IGNORE in the schema will not allow us to add duplicate users

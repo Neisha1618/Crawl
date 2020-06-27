@@ -18,17 +18,9 @@ app.use(express.static(CLIENT_PATH));
 app.use(express.json());
 app.use('/api', apiRouter);
 
-if (process.env.DEPLOYED === 'true') {
-  const options = {
-    key: fs.readFileSync('/etc/letsencrypt/live/crawl.southcentralus.cloudapp.azure.com/privkey.pem'),
-    cert: fs.readFileSync('/etc/letsencrypt/live/crawl.southcentralus.cloudapp.azure.com/fullchain.pem'),
-  };
-  https.createServer(options, app).listen(PORT);
-} else {
-  app.listen(PORT, () => {
-    console.log(`Server Listening on Port:${PORT} 🚀`);
-  });
-}
+app.listen(PORT, () => {
+  console.log(`Server Listening on Port:${PORT} 🚀`);
+});
 
 module.exports = {
   PORT,

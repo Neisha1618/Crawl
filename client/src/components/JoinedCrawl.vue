@@ -2,12 +2,14 @@
   <div>
     <h3>Name: {{ crawl.Title }}</h3>
     <h3>
-      When: {{ new Date(Date.parse(crawl.Crawl_Date)).toDateString() }} at {{ crawl.Crawl_Time }}
+      When: {{ moment(crawl.Crawl_Date).format('MM/DD/YYYY') }} at {{ moment(crawl.Crawl_Time, "HH:mm:ss").format('hh:mm A') }}
     </h3>
+    <br /><br />
     <CrawlStatus
       :crawlId="crawlId"
     />
     <div>
+    <br />
       <CrawlMap
         :userId="userId"
         :crawlId="crawlId"

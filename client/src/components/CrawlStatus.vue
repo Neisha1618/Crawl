@@ -24,6 +24,7 @@
     >
       Vote to Move!
     </button> -->
+    <br /><br />
     <Participants
       :crawlId="crawlId"
       :crawlStatus="crawlStatus"

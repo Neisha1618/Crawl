@@ -142,7 +142,7 @@ export default {
     saveUserCrawl(userId, crawlId) {
       axios.post(`/api/join/uc/${userId}+${crawlId}`)
         .then(() => {
-          this.joinCrawlUrl = `https://crawl.southcentralus.cloudapp.azure.com:8081/#/crawl/joined/${this.$parent.user.id}/${this.title}/${this.crawlId}`.replace(/\s+/g, '');
+          this.joinCrawlUrl = `https://legacy-crawl.uc.r.appspot.com/#/crawl/joined/${this.$parent.user.id}/${this.title}/${this.crawlId}`.replace(/\s+/g, '');
           this.joinCrawlKey += 1;
           this.$vs.notify({
             title: 'SAVED',

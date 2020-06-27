@@ -2,8 +2,8 @@
   <div>
     <p>{{ participant.Name_First }}</p>
     <div v-if="participant.Phone_Number">
-      <button @click="{sendtext(participant.Phone_Number, `hurry the fuck up! We are going to ${crawlStatus} now` )}">
-        Text 'em hurry the fuck up!
+      <button @click="{sendtext(participant.Phone_Number, `hurry up! We are going to ${crawlStatus} now` )}">
+        Text 'em hurry up!
       </button>
     </div>
   </div>

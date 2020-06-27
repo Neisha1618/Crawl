@@ -15,6 +15,15 @@ const connection = mysql.createConnection({
   database: DB_NAME,
 });
 
+// // production connection
+// const connection = mysql.createConnection({
+//   host: `/cloudsql/${process.env.DB_INSTANCE}`,
+//   user: DB_USER,
+//   password: DB_PASS,
+//   database: DB_NAME,
+//   socketPath: `/cloudsql/${process.env.DB_INSTANCE}`,
+// });
+
 const query = util.promisify(connection.query).bind(connection);
 
 connection.connect((err) => {
